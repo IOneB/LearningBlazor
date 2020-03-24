@@ -1,0 +1,14 @@
+@page "/Counter"
+@using Microsoft.AspNetCore.Components.Web
+
+<div class="row">
+    <div class="col-sm-1">
+        <button @onclick="async (args) => { await Task.Delay(100); if (args.CtrlKey) counter += 10; else counter++; }">+</button>
+    </div>
+    <div class="col-sm-1">
+        <span>@counter</span>
+    </div>
+    <div class="col-sm-1">
+        <button @onclick="async (MouseEventArgs args) => { await Task.Delay(100); if (args.CtrlKey) counter -= 10; else counter--; }" >-</button>
+    </div>
+</div>

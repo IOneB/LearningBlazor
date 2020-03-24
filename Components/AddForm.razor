@@ -1,0 +1,11 @@
+@page "/AddForm"
+@using Microsoft.AspNetCore.Components.Web
+
+<div>
+    <label>@item</label>
+    <input @bind="item" @bind:event="oninput"/>
+
+    <button @onclick="() => Callback.InvokeAsync(item)">
+        Добавить
+    </button>
+</div>

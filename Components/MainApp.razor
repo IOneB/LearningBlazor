@@ -1,0 +1,46 @@
+@using LearnBlazor.Components
+@using Microsoft.AspNetCore.Components.Web
+
+<h1>@header</h1>
+<div class="container">
+    <p class="alert">@info</p>
+
+    <input placeholder="Родительский инпут" id="useAge" @attributes="Attr" />
+
+    <div class="border">
+        <Counter />
+    </div>
+    <div class="border">
+        <Data Count="@users.Count()" Users="@users" @attributes="Attr" Max="45">
+            <div>
+                <h3>Отрывок</h3>
+                <p>Высокой страсти не имея</p>
+                <p>Для звуков жизни не щадить,</p>
+                <p>Не мог он ямба от хорея,</p>
+                <p>Как мы ни бились, отличить.</p>
+            </div>
+        </Data>
+    </div>
+
+    <div class="border">
+        <CallBacked Callback="@Alert" />
+    </div>
+
+    <div class="border">
+        <CssEditor />
+    </div>
+
+    <div class="border">
+        <Templated Items="@Attr.ToList()">
+            <Header>
+                Захоловок
+            </Header>
+            <Main Context="property">
+                <span><b>@property.Key</b>:<i> @property.Value</i></span>
+            </Main>
+            <Footer>
+                @DateTime.Now.Year  - це настоящее
+            </Footer>
+        </Templated>
+    </div>
+</div>

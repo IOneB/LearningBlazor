@@ -1,0 +1,51 @@
+@using Microsoft.AspNetCore.Components.Web
+
+<div>
+    <select value="@property" @onchange="SelectChange">
+        @foreach (var item in new[] { "height", "width", "background-color" })
+        {
+            <option>
+                @item
+            </option>
+        }
+    </select>
+
+    @if (property == "height" || property == "width")
+    {
+        <select @bind="value">
+            @foreach (var item in new[] { "10px", "50px", "100px", "200px" })
+            {
+                <option>
+                    @item
+                </option>
+            }
+        </select>
+    }
+    else
+    {
+        <select @bind="value">
+            @foreach (var item in new[] { "red", "green", "blue" })
+            {
+                <option>
+                    @item
+                </option>
+            }
+        </select>
+    }
+
+    <button @onclick="() => css[property] = value">Add property</button>
+    <table>
+        @foreach (var item in css)
+        {
+            <tr>
+                <td>
+                    @item.Key:@item.Value
+                </td>
+                <td>
+                    <button @onclick="() => css.Remove(item.Key)">remove</button>
+                </td>
+            </tr>
+        }
+    </table>
+    <div @bind-style="@Css" @bind-style:event="oninput"></div>
+</div>

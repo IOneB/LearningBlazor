@@ -1,0 +1,44 @@
+@using LearnBlazor.Services
+
+<style>
+    .border {
+        margin: 15px 0;
+        padding: 10px 10px;
+    }
+    .navigation {
+        width: 25%;
+        height: 100%;
+        position: fixed;
+        padding: 15px;
+        background: lightgray;
+    }
+</style>
+@inject NavigationService _service
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LearnBlazor</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navigation" style="width:25%">
+        <h3 class="">Menu</h3>
+        <ul>
+            @Html.Raw(_service.Navigations())
+        </ul>
+        
+    </div>
+    <div style="margin-left:26%;padding:15px">
+        @RenderBody()
+    </div>
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>
+
