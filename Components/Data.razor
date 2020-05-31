@@ -1,13 +1,15 @@
 @page "/Data"
-<h2>Количество пользователей - @Count</h2>
-<AddForm Callback="AddUser"></AddForm>
-<ul>
-    @foreach (var item in Users)
-    {
-        <li>@item</li>
-    }
-</ul>
+<div class="col-sm-6 border">
+    <h2>Количество пользователей - @Count</h2>
+    <AddForm Callback="AddUser"></AddForm>
+    <ul>
+        @foreach (var item in Users)
+        {
+            <li>@item</li>
+        }
+    </ul>
 
-@ChildContent
+    @ChildContent
 
-<input placeholder="Детский инпут" @attributes="InputAttr"/>
+    <input placeholder="Детский инпут" @attributes="InputAttr" />
+</div>

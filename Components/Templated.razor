@@ -1,17 +1,20 @@
 @page "/Templated"
 @typeparam TItem
-<h1>@Header</h1>
 
-<ol>
-    @foreach (var item in Items)
-    {
-        <li>
-            @Main(item)
-        </li>
-    }
+<div class="col-sm-6 border">
+    <h1>@Header</h1>
 
-</ol>
+    <ol>
+        @foreach (var item in Items)
+        {
+            <li>
+                @Main(item)
+            </li>
+        }
 
-<footer>
-    @Footer
-</footer>
+    </ol>
+
+    <footer>
+        @Footer
+    </footer>
+</div>

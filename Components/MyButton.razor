@@ -1,0 +1,8 @@
+@using Microsoft.AspNetCore.Components.Web
+
+<button class="btn btn-primary" @onclick="arg => Click?.Invoke(this, arg)">
+    @if (Parameters.ContainsKey("Text"))
+    {
+        @Parameters["Text"];
+    }
+</button>

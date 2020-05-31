@@ -7,30 +7,12 @@
 
     <input placeholder="Родительский инпут" id="useAge" @attributes="Attr" />
 
-    <div class="border">
+    <div class="row">
         <Counter />
-    </div>
-    <div class="border">
-        <Data Count="@users.Count()" Users="@users" @attributes="Attr" Max="45">
-            <div>
-                <h3>Отрывок</h3>
-                <p>Высокой страсти не имея</p>
-                <p>Для звуков жизни не щадить,</p>
-                <p>Не мог он ямба от хорея,</p>
-                <p>Как мы ни бились, отличить.</p>
-            </div>
-        </Data>
-    </div>
-
-    <div class="border">
         <CallBacked Callback="@Alert" />
     </div>
 
-    <div class="border">
-        <CssEditor />
-    </div>
-
-    <div class="border">
+    <div class="row">
         <Templated Items="@Attr.ToList()">
             <Header>
                 Захоловок
@@ -42,5 +24,22 @@
                 @DateTime.Now.Year  - це настоящее
             </Footer>
         </Templated>
+        <Data Count="@users.Count()" Users="@users" @attributes="Attr" Max="45">
+            <div>
+                <h3>Отрывок</h3>
+                <p>Высокой страсти не имея</p>
+                <p>Для звуков жизни не щадить,</p>
+                <p>Не мог он ямба от хорея,</p>
+                <p>Как мы ни бились, отличить.</p>
+            </div>
+        </Data>
+    </div>
+
+    <div class="row">
+        <CssEditor />
+        <Collapsed />
+    </div>
+    <div @key="@buttonText" class="row">
+        <MyButton Text="@buttonText" Click="ClickButton" />
     </div>
 </div>

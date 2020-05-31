@@ -24,6 +24,14 @@ namespace LearnBlazor.Components
         };
 
         string info;
+        string buttonText = "click me!";
+
+        public void ClickButton(object sender, EventArgs args)
+        {
+            buttonText = "thx";
+            (sender as MyButton).Parameters["Text"] = buttonText;
+        }
+
         private void Alert(MouseEventArgs args)
         {
             info += "Alert!";

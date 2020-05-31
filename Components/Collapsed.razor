@@ -1,0 +1,13 @@
+@using Microsoft.AspNetCore.Components.Web
+
+<div class="col-sm-6 border">
+    <div @onclick="() => visible = !visible">
+        Нажми меня!
+    </div>
+    <ul @bind-hidden="@visible" @bind-hidden:event="oninput">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
